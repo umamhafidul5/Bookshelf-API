@@ -29,7 +29,7 @@ const updateBook = (req, h) => {
     const finished = pageCount === readPage;
     const updatedAt = new Date().toISOString();
     books[index] = {
-      id: bookId,
+      ...books[index],
       name,
       year,
       author,
@@ -37,9 +37,8 @@ const updateBook = (req, h) => {
       publisher,
       pageCount,
       readPage,
-      finished,
       reading,
-      insertedAt: books[index].insertedAt,
+      finished,
       updatedAt,
     };
 
